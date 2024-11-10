@@ -1,0 +1,68 @@
+.swiper-slide{
+    position: relative;
+    cursor: pointer;
+    img{
+        transition: 0.3s ease-in-out;
+    }
+    .movie-info{
+        position: absolute;
+        align-self: center;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-family: $second-font;
+        padding: 0;
+        opacity: 0;
+        transition: 0.3s ease-in-out;
+        width: 234px;
+        height: 351px;
+        padding: 0 40px;
+        padding-top: 30px;
+        .movie-title{
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 24.2px;
+            text-align: center;
+        }
+        .movie-year{
+            color: #B0B0B0;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 24.2px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .movie-genre{
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 16.94px;
+            text-align: center;
+        }
+        .movie-star{
+            max-width: 35px;
+            max-height: 35px;
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+        .movie-rating{
+            color: $main-color;
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 38.73px;
+            text-align: center;
+        }
+    }
+    &:hover{
+        img{
+            filter:brightness(0.2);
+        }
+        .movie-star{
+            filter:none;
+        }
+        .movie-info{
+            opacity: 100;
+        }
+    }
+}

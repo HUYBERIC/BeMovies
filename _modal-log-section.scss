@@ -1,0 +1,156 @@
+.modal-log-section{
+    .overlay{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        z-index:10;
+        backdrop-filter: blur(2px);
+    }
+    .modal-log{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #000;
+        padding: 1rem;
+        border-radius: 10px;
+        width: 90%;
+        max-width: 410px;
+        z-index: 20;
+        box-shadow: 0 0 15px $main-color;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        .closing-modal{
+            width: 16px;
+            align-self: flex-start;
+            cursor: pointer;
+        }
+        .switchBtn{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 288px;
+            height: 54px;
+            border: 2px solid white;
+            border-radius: 10px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            overflow: hidden;
+            .back-login,
+            .back-signup{
+                flex: 1;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                transition: color 0.3s;
+                p{
+                    font-weight: 700;
+                    font-size: 24px;
+                    line-height: 28.78px;
+                    letter-spacing: 3%;
+                }
+                &.active{
+                    background-color: $main-color;
+                }
+            }
+        }
+        .form-container{
+            width: 100%;
+            #login-form,
+            #signup-form{
+                display:flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                .typeTxt{
+                    width: 100%;
+                    max-width: 288px;
+                    height: 44px;
+                    border-radius: 10px;
+                    padding: 20px;
+                    border: none;
+                    font-size: 16px;
+                    font-weight: 400;
+                    font-family: $second-font;
+                    line-height: 19.36px;
+                    &:focus{
+                        border: none;
+                        outline: none;
+                    }
+                }
+                label{
+                    align-self: start;
+                    margin-left: 3rem;
+                    display: flex;
+                    align-items: center;
+                    max-width: 288px;
+                    margin-bottom: 30px;
+                    input[type="checkbox"]{
+                        appearance: none;
+                        width: 20px;
+                        height: 20px;
+                        border-radius: 6px;
+                        margin-right: 10px;
+                        border: 2px solid white;
+                        background-color: white;
+                        cursor: pointer;
+                        position: relative;
+                        &:checked{
+                            background-color: $main-color;
+                            border-color: $main-color;
+                        &:before{
+                            content: '✔';
+                            position: absolute;
+                            top: 40%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            color: white;
+                            font-size: 15px;
+                        }
+                        }
+                    }
+                }
+                .submit-btn{
+                    width: 100%;
+                    max-width: 288px;
+                    height: 47px;
+                    border-radius: 10px;
+                    border:none;
+                    background-color: $main-color;
+                    color: $text-color;
+                    text-transform: uppercase;
+                    font-size: 20px;
+                    font-weight: 700;
+                    font-family: $first-font;
+                    line-height: 23.98px;
+                    letter-spacing: 3%;
+                    cursor: pointer;
+                }
+                .signup-btn{
+                    margin-bottom: 50px;
+                }
+                .forgot-password{
+                    align-self: start;
+                    margin-left: 3rem;
+                    
+                }
+                .not-member{
+                    align-self: start;
+                    margin-left: 3rem;
+                    margin-bottom: 50px;
+                }
+            }
+            #signup-form.hidden,
+            #login-form.hidden{
+                display: none;
+            }
+        }
+    }
+}

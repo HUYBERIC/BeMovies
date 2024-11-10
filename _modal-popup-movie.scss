@@ -1,0 +1,101 @@
+.modal-popup-movie{
+    .overlay{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        z-index:10;
+        backdrop-filter: blur(2px);
+    }
+    .popup-movie{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #000;
+        padding: 1rem;
+        border-radius: 10px;
+        width: 90%;
+        max-width: 742px;
+        z-index: 20;
+        box-shadow: 0 0 15px $main-color;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        .closing-modal{
+            width: 16px;
+            align-self: flex-start;
+            cursor: pointer;
+        }
+        .popup-content{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            width: 100%;
+            height: 100%;
+            padding: 20px 40px;
+            gap: 20px;
+            .popup-img{
+                grid-area: 1 / 1 / 2 / 2;
+                display:flex;
+                width: 100%;
+                height: 100%;
+                justify-content: center;
+                align-items: flex-start;
+                img{
+                    width: 234px;
+                    height: 351px;
+                    border: 1px solid white;
+                }
+            }
+            .popup-txt{
+                grid-area: 1 / 2 / 2 / 3;
+                .movieTitle{
+                    color: $main-color;
+                    text-transform: uppercase;
+                    font-size: 20px;
+                    font-weight: 700;
+                    line-height: 23.98px;
+                    letter-spacing: 3%;
+                }
+                .movieYear{
+                    font-size: 14px;
+                    font-weight: 700;
+                    line-height: 16.79px;
+                    letter-spacing: 3%;
+                    margin-bottom: 10px;
+                }
+                .movieRate{
+                    color: $main-color;
+                    font-size: 20px;
+                    font-weight: 700;
+                    line-height: 24.2px;
+                    letter-spacing: 3%;
+                    margin-bottom: 10px;
+                }
+                .movieGenre{
+                    text-transform: uppercase;
+                    font-size: 14px;
+                    font-weight: 700;
+                    line-height: 16.79px;
+                    letter-spacing: 3%;
+                    margin-bottom: 10px;
+                }
+                .movieResume{
+                    font-size: 16px;
+                    font-weight: 300;
+                    line-height: 24px;
+                    letter-spacing: 3%;
+                    margin-bottom: 20px;
+                }
+                .movieCast{
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 16.79px;
+                    letter-spacing: 3%;
+                }
+            }
+        }
+    }
+}

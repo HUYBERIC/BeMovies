@@ -1,0 +1,35 @@
+footer{
+    background-color: $second-bg-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 186px;
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+        height: auto;
+        .bigTitle{
+            transition: .3s ease-in-out;
+            &:hover{
+            transform: scale(1.05);
+            }
+        }
+        .navbar a{
+            margin: 10px;
+            border-bottom: 3px solid transparent;
+            transition: 0.3s ease-in-out;
+            &:hover{
+                border-bottom: 3px solid $main-color;
+            }
+        }
+        .copyright{
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 16.79px;
+            color: #B8B8B8;
+        }
+    }
+}

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheMovieDB</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+</head>
+<body>
+
+    <!-- H E A D E R -->
+
+<header>
+    <div class="container">
+        <p class="bigTitle"><span>Be</span>Movies</p>
+
+        <nav class="navbar">
+            <a class="navTitle" href="#search">search</a>
+            <a class="navTitle" href="#latest">latest</a>
+            <a class="navTitle" href="#genres">genres</a>
+            <a id="modalLogRegister" class="navTitle">register</a>
+            <a id="modalLogSignin" class="navTitle">signin</a>
+        </nav>
+    </div>
+</header>
+
+<section class="main-content">
+    <!-- H E R O -->
+
+<section class="hero" id="search">
+    <div class="container">
+        <div class="searchBar">
+            <input type="text" placeholder="Movie title here...">
+            <button>
+                <i class='bx bx-right-arrow-alt'></i>
+            </button>
+        </div>
+    </div>
+</section>
+
+    <!-- F I R S T   S E C T I O N -->
+
+<section class="first-section hidden">
+</section>
+
+    <!-- S E C O N D   S E C T I O N -->
+
+<section class="second-section" id="latest">
+    <div class="container">
+        <p class="swiper-title">Latest releases</p>
+
+        <!-- Slider main container -->
+        <div id="latestSwiper" class="swiper">
+        <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+            <!-- Slides -->
+            </div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"><img src="img/arrowL.svg"></div>
+            <div class="swiper-button-next"><img src="img/arrowR.svg"></div>
+
+        </div>
+    
+    </div>
+</section>
+
+    <!-- T H I R D   S E C T I O N -->
+
+<section class="third-section" id="genres">
+    <div class="container">
+        <div class="swiper-title">
+            <p class="categoryName">Movies by genre</p>
+
+            <div class="genreSelector">
+                <p class="genre comedy active" data-genre-id="35">Comedy</p>
+                <p class="genre drama" data-genre-id="18">Drama</p>
+                <p class="genre action" data-genre-id="28">Action</p>
+                <p class="genre romance" data-genre-id="10749">Romance</p>
+                <p class="genre fantasy" data-genre-id="14">Fantasy</p>
+                <p class="genre animation" data-genre-id="16">Animation</p>
+            </div>
+        </div>
+
+        <div class="underline"></div>
+
+        <p class="genreChoice">Results for "Comedy"</p>
+        <!-- Slider main container -->
+        <div id="genresSwiper" class="swiper">
+        <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+            <!-- Slides -->
+            </div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"><img src="img/arrowL.svg"></div>
+            <div class="swiper-button-next"><img src="img/arrowR.svg"></div>
+
+        </div>
+    
+    </div>
+</section>
+<!-- fin de main-content -->
+</section> 
+
+    <!-- F O O T E R -->
+
+    <footer class="footer">
+        <div class="container">
+            <p class="bigTitle"><span>Be</span>Movies</p>
+
+            <nav class="navbar">
+                <a class="navTitle" href="#search">search</a>
+                <a class="navTitle" href="#latest">latest</a>
+                <a class="navTitle" href="#genres">genres</a>
+                <a id="modalLogFooterRegister" class="navTitle">register</a>
+                <a id="modalLogFooterSignin" class="navTitle">signin</a>
+            </nav>
+
+            <p class="copyright">
+                @2023 - All Rights Reserved
+            </p>
+        </div>
+    </footer>
+
+    <!-- M O D A L  L O G I N / R E G I S T E R -->
+
+    <section class="modal-log-section hidden">
+        <div class="overlay hidden" id="overlay"></div>
+        <div class="modal-log" id="modal-log">
+            <!-- Closing button -->
+            <img src="img/ClosingModal.svg" class="closing-modal">
+            <!-- Switch SignUp/Login -->
+            <div class="switchBtn">
+                <div class="back-signup" id="back-signup">
+                    <p>SIGNUP</p>
+                </div>
+                <div class="back-login active" id="back-login">
+                    <p>LOGIN</p>
+                </div>
+            </div>
+            <!-- Form content -->
+            <div class="form-container">
+                <!-- Sign Up Form -->
+                <form id="signup-form" class="hidden">
+                    <input type="text" placeholder="Username" class="typeTxt">
+                    <input type="password" placeholder="Password" class="typeTxt">
+                    <label>
+                        <input type="checkbox"> Remember me
+                    </label>
+                    <button type="submit" class="submit-btn signup-btn">SignUp</button>
+                </form>
+                <!-- Log In Form -->
+                <form id="login-form">
+                    <input class="typeTxt" type="text" placeholder="Username">
+                    <input class="typeTxt" type="password" placeholder="Password">
+                    <label>
+                        <input type="checkbox"> Remember me
+                    </label>
+                    <button type="submit" class="submit-btn login-btn">LogIn</button>
+                    <a class="forgot-password"><span>I forgot my password</span></a>
+                    <p class="not-member">Not a member yet? <a id="switch-to-signup"><span>Sign Up</span></a></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- M O D A L   P O P U P   M O V I E -->
+
+    <section class="modal-popup-movie hidden">
+        <div class="overlay popup hidden" id="overlay"></div>
+        <div class="popup-movie">
+            <!-- Closing button -->
+            <img src="img/ClosingModal.svg" class="closing-modal popup">
+            <div class="popup-content">
+                <div class="popup-img"></div>
+                <div class="popup-txt">
+                    <div class="movieTitle"></div>
+                    <div class="movieYear"></div>
+                    <div class="movieRate"><i class='bx bxs-star'> </i></div>
+                    <div class="movieGenre"></div>
+                    <div class="movieResume"></div>
+                    <div class="movieCast"></div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- S C R I P T -->
+<script src="app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+</body>
+</html>
